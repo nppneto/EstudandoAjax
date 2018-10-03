@@ -1,12 +1,12 @@
 <?php
 
 $host = "localhost";
-$user = "root";
+$user = "developer";
 $password = "vertrigo";
 $db = "meubanco";
 
 
-$conn = mysqli_connect($host, $user, $password, $db) or die('aaaaaaaaaaaaaaaaah quero dormir');
+$conn = mysqli_connect($host, $user, $password, $db) or die("Tá pegando fogo, bicho...");
 
 function Buscar($_conn):Array {
 
@@ -37,6 +37,23 @@ function Salvar($_conn, $_usuario) {
         '{$_usuario['email']}',
         '{$_usuario['senha']}'
     )";
+
+    mysqli_query($_conn, $query);
+
+}
+
+function Editar($_conn, $_id, $_usuario) {
+
+    $query = "UPDATE USUARIO SET
+                NOME = '{$_usuario['nome']}',
+                EMAIL = '{$_usuario['email']}',
+                SENHA = '{$_usuario['senha']}'
+            WHERE ID_USUARIO = $_id
+    ";
+
+    // echo $query;
+
+    // exit();
 
     mysqli_query($_conn, $query);
 
