@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$user = "developer";
+$user = "root";
 $password = "vertrigo";
 $db = "meubanco";
 
@@ -23,6 +23,8 @@ function Buscar($_conn):Array {
     }
 
     return $usuarios;
+
+    // var_dump($usuarios);
 
 }
 
